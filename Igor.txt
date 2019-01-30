@@ -1,0 +1,4 @@
+name : Igor
+health : 120
+damage : 30
+armor : 20
