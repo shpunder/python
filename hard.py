@@ -44,7 +44,11 @@ def process_user_choice(choice, person):
     elif choice == 2:
         try:
             count = float(input('Сумма к снятию:'))
-            print(withdraw_money(person, count))
+            s = str(count)
+            if len(s[s.find('.') + 1:]) < 2:
+                print(withdraw_money(person, count))
+            else:
+                print('Сумма введена не правильно')
         except ValueError:
             print('Ошибка ввода. Попробуйте еще раз!')
 
@@ -77,7 +81,9 @@ def start():
     else:
         print('Номер карты или пин код введены не верно!')
 
-    print('Ошибка ввода данных. Начните заново!')
+        print('Ошибка ввода данных. Начните заново!')
+
+    print('Досвидания!')
 
 
 start()
