@@ -59,8 +59,9 @@ def del_file():
         print("Необходимо указать имя файла вторым параметром")
         return
     try:
-        os.remove(file_name)
-        print('Файл удален')
+        if input('Точно удалить y/n? ').lower() == 'y':
+            os.remove(file_name)
+            print('Файл удален')
     except FileNotFoundError:
         print('файл {} не найден'.format(file_name))
 
